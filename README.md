@@ -1,95 +1,79 @@
-# AI-Smart-Radar-System
-AI-powered smart radar system using computer vision, hand gestures, Arduino, ultrasonic sensing, and servo control.
-AI Smart Radar System
+# 🤖 AI Smart Radar System
 
-An AI-powered radar system that combines computer vision, hand gesture recognition, Arduino, ultrasonic sensing, and servo control.
+> An AI-powered smart radar system combining **computer vision, hand gesture recognition, Arduino, ultrasonic sensing, and servo control**.
 
-✨ Features
-🖐️ Hand gesture-based control
-📷 Real-time hand tracking using MediaPipe
-🤖 Arduino-based hardware control
-📡 HC-SR04 ultrasonic distance measurement
-🔄 Servo-based radar scanning
-📺 LCD distance/angle display
-💻 Python ↔ Arduino serial communication
-🎯 Real-time gesture commands
-🧠 Technology Stack
-Technology	Purpose
-Python	Computer vision & control
-OpenCV	Webcam processing
-MediaPipe	Hand tracking
-Arduino Uno	Hardware controller
-HC-SR04	Distance measurement
-Servo Motor	Radar scanning
-I2C LCD	Display
-Serial Communication	Python ↔ Arduino
-🖐️ Gesture Controls
-Gesture	Action
-☝️ Index finger	Move radar right
-👍 Thumb	Move radar left
-✋ Other/neutral	Center servo
-🔌 Hardware
-Arduino Uno
-│
-├── HC-SR04
-│   ├── VCC → 5V
-│   ├── GND → GND
-│   ├── TRIG → D9
-│   └── ECHO → D10
-│
-├── Servo
-│   ├── VCC → 5V
-│   ├── GND → GND
-│   └── Signal → D6
-│
-└── I2C LCD
-    ├── VCC → 5V
-    ├── GND → GND
-    ├── SDA → A4
-    └── SCL → A5
-🧩 How it works
-             WEBCAM
-                │
-                ▼
-        ┌───────────────┐
-        │    OpenCV     │
-        └───────┬───────┘
-                │
-                ▼
-        ┌───────────────┐
-        │   MediaPipe   │
-        │ Hand Tracking │
-        └───────┬───────┘
-                │
-          Gesture detected
-                │
-                ▼
-        ┌───────────────┐
-        │ Python Control│
-        └───────┬───────┘
-                │ Serial
-                ▼
-        ┌───────────────┐
-        │  Arduino Uno  │
-        └───────┬───────┘
-                │
-        ┌───────┴────────┐
-        ▼                ▼
-     SERVO             HC-SR04
-        │                │
-        ▼                ▼
-   Radar angle       Distance
-        │                │
-        └───────┬────────┘
-                ▼
-             LCD
-🛠️ Python requirements
-We can put this in Python/requirements.txt:
+![Project Status](https://img.shields.io/badge/Status-Completed-success)
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![Arduino](https://img.shields.io/badge/Arduino-Uno-00979D)
+![OpenCV](https://img.shields.io/badge/OpenCV-Computer%20Vision-red)
+![MediaPipe](https://img.shields.io/badge/MediaPipe-Hand%20Tracking-orange)
 
-opencv-python
-mediapipe
-pyserial
+---
 
-Then anyone cloning your project can install everything with:
+## 📌 Overview
 
-pip install -r requirements.txt
+The **AI Smart Radar System** is a hardware-software project that combines an Arduino-based radar system with AI-powered hand gesture recognition.
+
+The system uses a webcam to detect hand gestures through **MediaPipe**, processes the gesture using **Python and OpenCV**, and sends commands to an **Arduino Uno** through serial communication.
+
+The Arduino then controls a servo motor while an **HC-SR04 ultrasonic sensor** measures the distance of objects.
+
+---
+
+## ✨ Features
+
+- 🖐️ Hand gesture-based radar control
+- 📷 Real-time hand tracking
+- 🤖 Arduino Uno hardware control
+- 📡 HC-SR04 ultrasonic distance measurement
+- 🔄 Servo-based radar scanning
+- 📺 I2C LCD display
+- 💻 Python ↔ Arduino serial communication
+- ⚡ Real-time gesture detection
+- 🎯 Gesture-controlled servo positioning
+
+---
+
+## 🧠 How It Works
+
+```text
+                    ┌──────────────┐
+                    │    WEBCAM    │
+                    └──────┬───────┘
+                           │
+                           ▼
+                    ┌──────────────┐
+                    │    OpenCV    │
+                    └──────┬───────┘
+                           │
+                           ▼
+                    ┌──────────────┐
+                    │   MediaPipe  │
+                    │ Hand Tracking │
+                    └──────┬───────┘
+                           │
+                           ▼
+                    ┌──────────────┐
+                    │    Python    │
+                    │ Gesture Logic│
+                    └──────┬───────┘
+                           │
+                     Serial USB
+                           │
+                           ▼
+                    ┌──────────────┐
+                    │  Arduino Uno │
+                    └──────┬───────┘
+                           │
+                 ┌─────────┴─────────┐
+                 │                   │
+                 ▼                   ▼
+          ┌────────────┐      ┌────────────┐
+          │    Servo   │      │  HC-SR04   │
+          │    Motor   │      │  Ultrasonic│
+          └────────────┘      └──────┬─────┘
+                                     │
+                                     ▼
+                              ┌────────────┐
+                              │    LCD     │
+                              └────────────┘
