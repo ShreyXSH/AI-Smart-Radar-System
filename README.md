@@ -77,3 +77,27 @@ The Arduino then controls a servo motor while an **HC-SR04 ultrasonic sensor** m
                               ┌────────────┐
                               │    LCD     │
                               └────────────┘
+
+<img width="480" height="410" alt="image" src="https://github.com/user-attachments/assets/361d8aa4-8e02-45aa-9f90-939010a09bf7" />
+<img width="492" height="156" alt="image" src="https://github.com/user-attachments/assets/4c691138-02a1-43c5-ac70-09e4893518a5" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
